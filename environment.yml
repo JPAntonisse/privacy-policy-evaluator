@@ -5,5 +5,7 @@ dependencies:
   - numpy
   - pandas
   - pip
+  - nltk
+  - matplotlib
 #  - pip:                            # Packages installed from PyPI
 #    - requests==2.21.0

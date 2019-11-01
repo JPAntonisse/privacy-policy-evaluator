@@ -8,9 +8,6 @@ Create the Environment for Privacy Policy Evaluator
 ```conda env create -f environment.yml```
 
 
-To update the environment if any changes are made
-```conda env update --prefix ./env --file environment.yml  --prune```
-
 # Activate Environment
 To activate the environment
 ```conda activate ./env```
@@ -18,3 +15,9 @@ To activate the environment
 # Running Privacy Policy Evaluator
 To activate the environment
 ```python ppe.py {args}```
+
+
+# Update environment
+To update the environment if any changes are made
+```conda activate ./env```
+```conda env update --file environment.yml```
