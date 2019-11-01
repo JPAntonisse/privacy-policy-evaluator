@@ -1,0 +1,9 @@
+name: privacy-policy-evaluator
+channels:
+  - defaults
+dependencies:
+  - numpy
+  - pandas
+  - pip
+#  - pip:                            # Packages installed from PyPI
+#    - requests==2.21.0
