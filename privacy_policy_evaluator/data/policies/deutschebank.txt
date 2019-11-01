@@ -1,0 +1,135 @@
+At Deutsche Bank we recognise the importance of personal information entrusted to us. It is one of our fundamental responsibilities as a bank to ensure that we protect the information entrusted to us by our clients and our website visitors. Please find below select security measures we established to protect your privacy.
+
+Why does Deutsche Bank collect personal information?
+
+We collect, process, and use personal information on our websites in order to offer you even better products and services, best adapt our business processes to our clients’ needs, and steer you to the most suitable product information and online banking applications.
+
+How does Deutsche Bank AG collect information and how long is it retained?
+
+Information collected on our website will only be retained for as long as necessary to fulfil the purpose for which it was collected. If you wish to access or correct any information Deutsche Bank AG holds about you, you may have your data deleted, blocked or corrected (as long as compliant with applicable law). You have the right to access the personal information we hold about you; this service is free of charge. Deutsche Bank AG is constantly aiming at enhancing its website. For this reason, we collect information through the website in an anonymised form, i.e. domain name, tracking the pages you visit and how long. The respective information is used for statistical and marketing purposes only and is not disclosed to third parties. Berlin-based Webtrekk GmbH supports us in this regard. They collect and process anonymised information through your browser when visiting the Deutsche Bank website. You may opt-out from this procedure by clicking on “Opt Out” and a cookie will be stored under this name. No information is collected as long as the cookie is stored in your browser. Please keep in mind that – as soon as the cookie is erased – the Opt Out for Deutsche Bank’s website is disabled and must be renewed. Currently, Opt Out is active: tracking information is not being collected on this computer. To reactivate collection of tracking information, please click here. Currently, Opt Out is not active: tracking information is being collected on this computer. According to the German Federal Data Protection Law, website visitors are made aware of any collection of personal information on each site they visit – apart from Webtrekk functionality. We do not collect, use and process any information without your explicit consent, which can also be given on-line (e.g. through registration forms). A consent once given can be withdrawn at any time for any future actions.
+
+What information is collected and how is it used?
+
+This information is collected using pseudonymised tracking and is then forwarded to us:
+
+
+
+Data tracking
+
+Tracking information includes details of the originating page that you used to access the Deutsche Bank website including the search requests you may have made when using a search engine. Details of the Deutsche Bank websites you visited and which search terms you may have used on the website are also collected, as well as additional information about website errors, website scrolling and the volume of data transferred between your browser and the web server.
+
+
+
+Length of stay
+
+We record the duration of your visit by processing when your visit started and came to an end as well as the network activity time, pop-up display time and the time that any errors occurred.
+
+
+
+Pseudonymised IDs
+
+Your pseudonymised IDs (uniquely identifiable number combinations) are stored In order to identify you as a repeat visitor to our website.
+
+
+
+Session information
+
+Besides temporary session IDs, with which your visit can be assigned via several subpages, your session information also includes the duration of the session.
+
+
+
+Campaign information
+
+Campaign information comprises the advertising media you have clicked on, where it is located and which marketing campaign it belongs to.
+
+
+
+Loading times
+
+The information collected includes the time taken for images and the whole website to load, as well as the time at which the website was loaded completely and the time spent on the website.
+
+
+
+Location information
+
+Where available, we collect information about the postcode, town, country, longitude, latitude and time zone of your visit.
+
+
+
+System information
+
+The information about the system with which you visit the website, including the display resolution, the operating system and browser used, network and connection information, the end device used, information about cookies, flash and JavaScript as well as the language setting, your domain, the IP address (shortened) and where applicable your organisation (if available)
+
+  We use the information collected on our websites to compile user profiles using pseudonyms. These pseudonymised user profiles do not allow any of your personal details to be identified. You can opt out of your information being collected by using the “Analytics & Re-Marketing Opt-out” link further down this page. Without your explicit consent this tracking information will not be combined with your personal information.
+
+How is information retained, protected, and used?
+
+Information input collected through this website will be transferred to the responsible Deutsche Bank AG division. Banking secrecy as well as confidentiality are maintained. Data will not be transferred to third parties, unless necessary to answer your queries (i.e. leaflets dispatched by vendors). Your information is used to exclusively fulfil the purpose for which it is collected, relating to the website through which it is collected. Websites through which we collect your information are usually encoded using the encryption module of your browser. These sites are certified by renowned institutions for international encryption technique, analogous to Deutsche Bank’s Internet Banking. Moreover, Deutsche Bank AG put in place additional and comprehensive state-of-the-art security measures when both accounts and custody accounts are accessed via the Internet. Firewalls prevent unauthorized access. Diverse encryption and identification layers protect customer information from intrusion or disclosure to third parties during data transfer. Furthermore, Deutsche Bank AG internally uses sophisticated encoding methods in order to prevent de-coding by unauthorised persons. Moreover, an electronic identifier is generated during data transfer to safeguard your information.
+
+Data privacy notices in accordance with the EU General Data Protection Regulation
+
+In addition to this website-specific privacy notice, further data privacy information, as required by the EU General Data Protection Regulation, can be found here under A. X. in German and English.
+
+Data privacy notes on social plugins
+
+Data privacy notes on plugins
+
+Our website uses social plugins (“plugins”) from social networking sites such as Twitter, Facebook etc.
+
+If you access a Deutsche Bank website using such a plugin, your browser will contact the server of the underlying social networking site, load the visual presentation of the plugin, and present it to you. While this is happening, the social networking site receives information concerning your visit to our website, as well as further data such as your IP address.
+
+In order to ensure an appropriate level of data privacy in connection with our internet presence, we have deactivated the respective plugins with a button and placed a short data privacy note that can be consulted before a plugin is activated.
+
+We have no influence on the amount of data that social networking sites collect via an active plugin. For more information, please consult the relevant data privacy notice: Facebook Google+ LinkedIn Twitter XING
+
+Cookies
+
+
+
+In view of the importance of data privacy, and our obligations of transparency, we provide information below about cookies, how we use them on our website and what options you have if, despite the benefits they bring, you prefer to disable them. We will assume you agree to accept the cookies that we use on our website if you do not disable or opt out of them as described below.
+
+What are cookies?
+
+Cookies are small text files. They are commonly downloaded to your computer or mobile device by websites that you visit. They enable the website to tag your device and recognize it as you move around the site (and potentially when you return at a later date) so that, for example you do not have to re-enter your password each time you move between pages of the website.
+
+Terminology
+
+When trying to understand cookies, and how to control them, it can help to know some terminology:
+
+Cookies installed on your device by the organization running the website you are visiting are known as “first party” cookies.
+
+Cookies installed on your device via the website you are visiting by another organization are termed “third party” cookies. An example is a cookie set by a specialist website analytics company that provides the website owner with data on the numbers of people visiting its website.
+
+So-called “persistent cookies” remain on your device even after you close your internet browser. They are activated each time you visit the website that created that particular cookie. For example, where a "persistent cookie" is used on a website to remember your login details, you will not need to enter those details each time you visit that website.
+
+Session cookies, by contrast, are temporary and are typically used to enable the website to operate, e.g. by permitting a user to move from page to page without having to log in again. Once you close your browser, all session cookies are deleted.
+
+What cookies do we use?
+
+To enhance user experience, this website uses ‘persistent’ and ‘session’ cookies for the purposes described below. These cookies are generally ‘first party’ cookies, but may also be ‘third party’ cookies.
+
+Website functionality
+
+Cookies that are essential for our website to function technically or which provide a service or option that you have requested. For example, a cookie that “remembers” your authentication details so you can remain logged into secure internet banking facilities, or a cookie that remembers the country or language you have selected.
+
+Website performance analysis
+
+Cookies that help us improve our website by providing us with aggregate statistics on how many users visit it, which parts of the site are viewed the most, and the city or regional location of those users. These may be installed by a third party analytics provider under a contract with us. These cookies do not identify you personally. Nevertheless, if you prefer to opt out of such analytics cookies, you may do so here: “Opt Out” and a cookie will be stored under this name. No information is collected as long as the cookie is stored in your browser. Please keep in mind that – as soon as the cookie is erased – the Opt Out for Deutsche Bank’s website is disabled and must be renewed.
+
+Currently, Opt Out is active: tracking information is not being collected on this computer. To reactivate collection of tracking information, please click here. Currently, Opt Out is not active: tracking information is being collected on this computer.
+
+Interest-based targeting
+
+In order to be able to provide you with the most relevant information about our products and services, we use cookies to be aware of which content you have viewed on our website.
+
+We may also use this information for the purposes of our advertising campaigns on third party websites. In that case, we may also receive information about the websites of our marketing partners on which you saw our advertisements. Similarly, third parties may display their advertisements on our website and they may become aware that you have visited our website. If you prefer to opt out of this, and receive advertisements that may be less relevant to your interests, you may do so here: “Opt Out” and a cookie will be stored under this name. No information is collected as long as the cookie is stored in your browser. Please keep in mind that – as soon as the cookie is erased – the Opt Out for Deutsche Bank’s website is disabled and must be renewed.
+
+Currently, Opt Out is active: tracking information is not being collected on this computer. To reactivate collection of tracking information, please click here. Currently, Opt Out is not active: tracking information is being collected on this computer.
+
+How to control cookies
+
+As explained above, cookies help you to get the most out of our website. If you decide to disable cookies, you may find that certain aspects of our website do not work as expected.
+
+Aside from any specific opt-outs we have provided above, if you do not wish to receive cookies you can set your web browser to disable cookies. Note that most browsers offer different levels of privacy, such as allowing first party cookies but blocking third party cookies, or notifying you each time a website wants to install a cookie. Be aware that disabling cookies in this way will prevent new cookies from being set, but will not stop previously set cookies from operating on your device unless you delete all cookies in your browser settings. The instructions for managing cookies in your browser can usually be found via the browser’s Help function or in a smartphone manual.
+
+If you feel that the above is not sufficient or if you have any queries as regards the collection, processing or use of your information we are looking forward to hearing from you. We will make every effort to reply as soon as possible and take into consideration any suggestions from your end. For inquiries about the personal data of yours that we hold, please use the following German language form (PDF) or contact us at data.privacy@db.com.

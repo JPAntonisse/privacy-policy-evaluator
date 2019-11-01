@@ -18,29 +18,6 @@ def paragraphing(text):
     # Return
     return [text_accepted, text_rejected]
 
-    # # Print Policy Paragraph
-    # for idx, item in enumerate(text_accepted):
-    #     f = open("data/policies/paragraphed/reddit-" + str(idx) + ".txt", "w")
-    #     f.write(item)
-    #     f.close()
-
-    # # Plot the sorted length of each line
-    # plt.figure(figsize=(15, 15))
-    # plt.xlabel('Lines sorted on size from small to large')
-    # plt.ylabel('Length of line len(string)')
-    # plt.grid()
-    # plt.plot(twitter_grad, label='twitter gradient')
-    # plt.plot(reddit_grad, label='reddit gradient')
-    #
-    # plt.plot(twitter_length, label='Twitter paragraph length')
-    # plt.plot(reddit_length, label='Reddit paragraph length')
-    # plt.axhline(y=2, color='black', linestyle=':', label=r'$y=2$')
-    #
-    # plt.axvline(x=twitter_pos, color='g', linestyle=':',
-    #             label=r'Twitter acceptance point $y=' + str(twitter_split) + '$')
-    # plt.axvline(x=reddit_pos, color='r', linestyle=':', label=r'Reddit acceptance point $y=' + str(reddit_split) + '$')
-    # plt.legend()
-
 
 twitter = open("data/policies/twitter.txt","r").read()
 paragraphing(twitter)
