@@ -1,7 +1,7 @@
-Privacy Policy Evaluator
+# Privacy Policy Evaluator
 
 
-#How to install
+## How to install
 Make sure Anaconda is installed on your system.
 
 Create the Environment for Privacy Policy Evaluator
