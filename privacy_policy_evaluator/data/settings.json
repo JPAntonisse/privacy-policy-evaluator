@@ -1,0 +1,120 @@
+{
+   "settings":{
+     "normalized": true,
+     "normalizedPerSentence" : false
+   },
+   "group1" : {
+       "value" : -5,
+       "words" : ["access", "connect", "use", "aggregate", "exchange", ""]
+   },
+   "group2" : {
+       "value" : 5,
+       "words" : {
+           "access": -5,
+           "aggregate": -2,
+           "allow": -3,
+           "apply": -2,
+           "avoid": 3,
+           "block": 5,
+           "change": -2,
+           "choose": 3
+       }
+   },
+   "group3" : {
+       "value" : 5,
+       "words" : {
+           "access": -5,
+           "aggregate": -2,
+           "allow": -3,
+           "apply": -2,
+           "avoid": 3,
+           "block": 5,
+           "change": -2,
+           "choose": 3
+       }
+   },
+   "group4" : {
+       "value" : 5,
+       "words" : {
+           "access": -5,
+           "aggregate": -2,
+           "allow": -3,
+           "apply": -2,
+           "avoid": 3,
+           "block": 5,
+           "change": -2,
+           "choose": 3
+       }
+   },
+     "group5" : {
+       "value" : 5,
+       "words" : {
+           "access": -5,
+           "aggregate": -2,
+           "allow": -3,
+           "apply": -2,
+           "avoid": 3,
+           "block": 5,
+           "change": -2,
+           "choose": 3
+       }
+   },
+   "group2" : {
+       "value" : -2,
+       "words" : {
+           "collect": -5,
+           "comply": -3,
+           "connect": -2,
+           "consolidate": -2,
+           "contact": -4,
+           "contract": -4,
+           "customize": -5,
+           "deny": -5,
+           "destroy": -10,
+           "disallow": 3,
+           "discipline": -2,
+           "disclaim": -4,
+           "disclose": -4,
+           "display": -4,
+           "enforce": -10,
+           "ensure": 2,
+           "exchange": -7,
+           "help": 5,
+           "honor": -2,
+           "imply": -2,
+           "inform": 5,
+           "limit": -5,
+           "maintain": 3,
+           "make": -2,
+           "maximize": -5,
+           "minimize": 5,
+           "monitor": -10,
+           "notify": 3,
+           "obligate": -10,
+           "opt-in": 4,
+           "opt-out": -4,
+           "investigate": -5,
+           "post": -5,
+           "prevent": 3,
+           "prohibit": -5,
+           "protect": 5,
+           "provide": -5,
+           "recommend": 2,
+           "request": 5,
+           "require": -5,
+           "reserve": -2,
+           "review": 2,
+           "share": -10,
+           "specify": 2,
+           "store": -8,
+           "update": -6,
+           "urge": 2,
+           "use": -5,
+           "verify": 3,
+           "prohibition": -5,
+           "permission": 5,
+           "obligation": -5,
+           "anti-obligation": 5
+      }
+  }
+}
