@@ -5,19 +5,32 @@
 Make sure Anaconda is installed on your system.
 
 Create the Environment for Privacy Policy Evaluator
-```conda env create -f environment.yml```
+```
+conda env create -f environment.yml
+```
 
 
 ## Activate Environment
 To activate the environment
-```conda activate ./env```
+```sh
+$ conda activate ./env
+```
 
 ## Running Privacy Policy Evaluator
-To activate the environment
-```python ppe.py {args}```
+Before running the privacy policy evaluator, make sure to have run setup.py. There are some downloads from NLTK that needs to be completed on your system.
+```
+python setup.py
+```
+```
+python ppe.py {args}
+```
 
 
 ## Update environment
 To update the environment if any changes are made
-```conda activate ./env```
-```conda env update --file environment.yml```
+```
+conda activate ./env
+```
+```
+conda env update --file environment.yml
+```
