@@ -38,7 +38,6 @@ def group(topics, threshold):
     # merge paragrahs
     topic_to_text_dict = {}
     for topic_name, paragraph_indexes in topic_to_paragraph_dict.items():
-        print(paragraph_indexes)
         paragraphs = np.array(paragraphs)
         topic_to_text_dict[topic_name] = " ".join(list(paragraphs[paragraph_indexes]))
 
