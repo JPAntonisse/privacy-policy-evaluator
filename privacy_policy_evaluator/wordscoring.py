@@ -7,7 +7,7 @@ min_score = "min"
 max_score = "max"
 
 
-def score_text(text):
+def score_text(text, verbose = 0):
     statements = text.split('.')
 
     # remove empty statements
@@ -40,19 +40,17 @@ def score_text(text):
         #print(statement_rating)
         total_statement_rating += statement_rating
 
-    print("Total statement rating: ", total_statement_rating)
     avg_privacy_word_score = total_statement_rating / total_privacy_word_count
-    print("Avg. score per privacy word ", avg_privacy_word_score)
-
-    # Check if we have to normalize the score
     norm_avg_privacy_word_score = avg_privacy_word_score / (dictSettings[max_score] - dictSettings[min_score])
-    print("(Norm.) Avg. score per privacy word ", norm_avg_privacy_word_score)
-
     avg_score_total_words = total_statement_rating / len(text.split())
-    print("Avg. score per total word", avg_score_total_words)
-
     norm_avg_score_total_words = avg_score_total_words / (dictSettings[max_score] - dictSettings[min_score])
-    print("(Norm.) Avg. score per privacy word total ", norm_avg_score_total_words)
+
+    if verbose > 0:
+        print("Total statement rating: ", total_statement_rating)
+        print("Avg. score per privacy word ", avg_privacy_word_score)
+        print("(Norm.) Avg. score per privacy word ", norm_avg_privacy_word_score)
+        print("Avg. score per total word", avg_score_total_words)
+        print("(Norm.) Avg. score per privacy word total ", norm_avg_score_total_words)
 
     return {
         "total_score" :  total_statement_rating,
