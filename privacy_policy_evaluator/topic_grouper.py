@@ -23,7 +23,6 @@ def group(paragraphs, topics, threshold=0.1):
         for feature_index in topic_feature_indices:
             score = vecs[i, feature_index]
             topic_name = feature_names[feature_index]
-            print(f"par: {i}, topic: {topic_name} --> {score} ")
             if score >= threshold:
                 if topic_name in topic_to_paragraph_dict:
                     topic_to_paragraph_dict[topic_name].append(i)
@@ -33,7 +32,6 @@ def group(paragraphs, topics, threshold=0.1):
     # merge paragrahs
     topic_to_text_dict = {}
     for topic_name, paragraph_indexes in topic_to_paragraph_dict.items():
-        print(paragraph_indexes)
         paragraphs = np.array(paragraphs)
         topic_to_text_dict[topic_name] = " ".join(list(paragraphs[paragraph_indexes]))
 
