@@ -83,3 +83,4 @@ def json_read_privacy_word_scores():
             for i in range(0, len(data['settings']['data'][p]['words'])):
                 dict[data['settings']['data'][p]['words'][i]] = data['settings']['data'][p]['value']
     return dict
+

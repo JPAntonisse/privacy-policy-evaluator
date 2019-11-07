@@ -1,4 +1,4 @@
-from privacy_policy_evaluator import commands, preprocessing, helpers, correlation, wordscoring
+from privacy_policy_evaluator import paragraphing, commands, preprocessing, helpers, correlation, wordscoring
 from typing import Callable
 
 
@@ -30,10 +30,14 @@ def evaluate_on_topic(args):
 
     :param args:
     """
+    # Read textfile
+    text = helpers.read_file(args.file)
+    # Paragraph the given text
+    paragraphed = paragraphing.paragraph(text)
     # Get topics from argumnets
     topics = helpers.split(args.topic)
 
-    print(topics)
+    print(paragraphed)
 
 
 def evaluate_score(args):
