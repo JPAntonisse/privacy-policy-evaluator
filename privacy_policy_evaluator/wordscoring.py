@@ -127,12 +127,12 @@ def plot_result():
     #plt.bar(y_pos, total_score, align='center', alpha=0.4)
 
     plt.figure(figsize=(8, 5))  # width:20, height:3
-    plt.bar(range(len(objects)), mean, align='center', width=0.8, color='r')
+    plt.bar(range(len(objects)), mean_privacy, align='center', width=0.8, color='black')
 
     plt.xticks(y_pos, objects)
-    plt.ylabel('Total score of privacy words')
+    plt.ylabel('Average score per privacy word')
     plt.xlabel('Policy')
-    plt.title('Total score of privacy words vs different policies')
+    plt.title('Average score per privacy word vs different policies')
 
 
     plt.show()
