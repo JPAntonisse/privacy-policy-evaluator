@@ -26,10 +26,14 @@ def remove_abbreviations(text):
                 .replace("'re", ' are')  \
 
 def replace_companies(text, company_names):
-    text = " ".join(text.split())
+    text = " ".join(text.split()).lower()
     # Remove company names
-    return text.replace('Twitter', 'company').replace('Reddit', 'company').replace('twitter', 'company').replace(
-        'reddit', 'company')
+    for name in company_names:
+        text = text.replace(name.lower(), 'company')
+
+    return text
+
+
 # remove special characters, basically removing all non letters and non spaces
 def replace_str_index(text, index=0, replacement=' '):
     return '%s%s%s' % (text[:index], replacement, text[index + 1:])
@@ -102,6 +106,3 @@ def full_preproccessing(documents, company_names = None, verbose = 0):
         preprocessed.append(document)
 
     return preprocessed
-
-processed = full_preproccessing(["this is a very interesting sentence of the twitter.com company we do use hackers"],[""] , verbose=1)
-print(processed)
