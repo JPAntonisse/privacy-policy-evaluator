@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def paragraph(text):
+def paragraphing(text):
     # Split file on lines
     text_lines = [s.strip() for s in text.splitlines()]
     # Sort the line length
@@ -15,5 +15,4 @@ def paragraph(text):
     #  Set Accepted and Rejected
     text_accepted = [s for s in text_lines if len(s) >= text_split]
     text_rejected = [s for s in text_lines if len(s) < text_split]
-    # Return
     return text_accepted

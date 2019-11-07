@@ -64,7 +64,7 @@ def score_text(text, verbose = 0):
 def json_read_settings():
     dict = {}
 
-    with open(os.path.dirname(__file__) + '/data/settings.json') as json_file:
+    with open(os.path.dirname(os.path.abspath(__file__)) + '/data/settings.json') as json_file:
         data = json.load(json_file)
         settings = data['settings']
         for element in settings:
@@ -77,10 +77,9 @@ def json_read_settings():
 def json_read_privacy_word_scores():
     dict = {}
 
-    with open(os.path.dirname(__file__) + '/data/settings.json') as json_file:
+    with open(os.path.dirname(os.path.abspath(__file__)) + '/data/settings.json') as json_file:
         data = json.load(json_file)
         for p in data['settings']['data']:
             for i in range(0, len(data['settings']['data'][p]['words'])):
                 dict[data['settings']['data'][p]['words'][i]] = data['settings']['data'][p]['value']
     return dict
-
