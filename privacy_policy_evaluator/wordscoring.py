@@ -2,8 +2,7 @@
 import json
 
 # If setting names are changed within 'settings.json' file, they also need to be changed here.
-normTotalWords = "normalizedTotalWords"
-normSpecialWords = "normalizedSpecialWords"
+# min, max for normalization. What is the highest valued words and the lowest valued word
 min_score = "min"
 max_score = "max"
 
@@ -38,7 +37,7 @@ def score_text(text):
                 total_privacy_word_count += 1
                 statement_rating += dictPrivacyWords[word]
 
-        print(statement_rating)
+        #print(statement_rating)
         total_statement_rating += statement_rating
 
     print("Total statement rating: ", total_statement_rating)
@@ -46,14 +45,22 @@ def score_text(text):
     print("Avg. score per privacy word ", avg_privacy_word_score)
 
     # Check if we have to normalize the score
-    if dictSettings[normSpecialWords]:
-        # In this case the values are between 0 and 10 through which dividing it by 10 will
-        avg_privacy_word_score = avg_privacy_word_score / 10
-        print("(Norm.) Avg. score per privacy word ", avg_privacy_word_score)
+    norm_avg_privacy_word_score = avg_privacy_word_score / (dictSettings[max_score] - dictSettings[min_score])
+    print("(Norm.) Avg. score per privacy word ", norm_avg_privacy_word_score)
 
-    #asdf = total_statement_rating / len(statements)
-    #print(asdf)
+    avg_score_total_words = total_statement_rating / len(text.split())
+    print("Avg. score per total word", avg_score_total_words)
 
+    norm_avg_score_total_words = avg_score_total_words / (dictSettings[max_score] - dictSettings[min_score])
+    print("(Norm.) Avg. score per privacy word total ", norm_avg_score_total_words)
+
+    return {
+        "total_score" :  total_statement_rating,
+        "avg_score_per_privacy_word" : avg_privacy_word_score,
+        "norm_avg_score_per_privacy_word": norm_avg_privacy_word_score,
+        "avg_score_total_words" : avg_score_total_words,
+        "norm_avg_score_total_words" : norm_avg_score_total_words
+    }
 
 def jsonReaderSettings():
     dict = {}
@@ -77,7 +84,3 @@ def jsonReaderPrivacyWordScores():
                 dict[data['settings']['data'][p]['words'][i]] = data['settings']['data'][p]['value']
     return dict
 
-
-with open('data/policies/reddit.txt', 'r', encoding='utf8') as policy:
-    data = policy.read()
-    score_text(data)

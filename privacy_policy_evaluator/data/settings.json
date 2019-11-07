@@ -1,7 +1,5 @@
 {
     "settings": {
-      "normalizedTotalWords": false,
-      "normalizedSpecialWords": true,
       "min": 0,
       "max": 10,
       "data": {
