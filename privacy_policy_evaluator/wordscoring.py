@@ -1,5 +1,8 @@
 # Multiplier to determine the statement.
 import json, os
+import matplotlib.pyplot as plt; plt.rcdefaults()
+import numpy as np
+import matplotlib.pyplot as plt
 
 # If setting names are changed within 'settings.json' file, they also need to be changed here.
 # min, max for normalization. What is the highest valued words and the lowest valued word
@@ -83,3 +86,55 @@ def json_read_privacy_word_scores():
             for i in range(0, len(data['settings']['data'][p]['words'])):
                 dict[data['settings']['data'][p]['words'][i]] = data['settings']['data'][p]['value']
     return dict
+
+def plot_result():
+    reddit = open(os.path.dirname(os.path.abspath(__file__)) + '/data/policies/reddit.txt',"r", encoding="utf8").read()
+    reddit_dict = score_text(reddit)
+
+    twitter = open(os.path.dirname(os.path.abspath(__file__)) + '/data/policies/twitter.txt',"r", encoding="utf8").read()
+    twitter_dict = score_text(twitter)
+
+    bankofamerica = open(os.path.dirname(os.path.abspath(__file__)) + '/data/policies/bankofamerica.txt',"r", encoding="utf8").read()
+    bankofamerica_dict = score_text(bankofamerica)
+
+    ing = open(os.path.dirname(os.path.abspath(__file__)) + '/data/policies/ing.txt',"r", encoding="utf8").read()
+    ing_dict = score_text(ing)
+
+    deutschebank = open(os.path.dirname(os.path.abspath(__file__)) + '/data/policies/deutschebank.txt',"r", encoding="utf8").read()
+    deutschebank_dict = score_text(deutschebank)
+
+    heineken = open(os.path.dirname(os.path.abspath(__file__)) + '/data/policies/heineken.txt',"r", encoding="utf8").read()
+    heineken_dict = score_text(heineken)
+
+    total_score = [reddit_dict["total"], twitter_dict["total"], bankofamerica_dict["total"],
+         ing_dict["total"], deutschebank_dict["total"], heineken_dict["total"]]
+
+    mean = [reddit_dict["mean"], twitter_dict["mean"], bankofamerica_dict["mean"], ing_dict["mean"],
+         deutschebank_dict["mean"], heineken_dict["mean"]]
+
+    mean_norm = [reddit_dict["mean_norm"], twitter_dict["mean_norm"], bankofamerica_dict["mean_norm"],
+         ing_dict["mean_norm"], deutschebank_dict["mean_norm"], heineken_dict["mean_norm"]]
+
+    mean_privacy = [reddit_dict["mean_privacy"], twitter_dict["mean_privacy"], bankofamerica_dict["mean_privacy"],
+         ing_dict["mean_privacy"], deutschebank_dict["mean_privacy"], heineken_dict["mean_privacy"]]
+
+    mean_privacy_norm = [reddit_dict["mean_privacy_norm"], twitter_dict["mean_privacy_norm"], bankofamerica_dict["mean_privacy_norm"],
+                    ing_dict["mean_privacy_norm"], deutschebank_dict["mean_privacy_norm"], heineken_dict["mean_privacy_norm"]]
+
+    objects = ('Reddit', 'Twitter', 'Bank of America', 'ING', 'Deutsche Bank', 'Heineken')
+    y_pos = np.arange(len(objects))
+
+    #plt.bar(y_pos, total_score, align='center', alpha=0.4)
+
+    plt.figure(figsize=(8, 5))  # width:20, height:3
+    plt.bar(range(len(objects)), mean, align='center', width=0.8, color='r')
+
+    plt.xticks(y_pos, objects)
+    plt.ylabel('Total score of privacy words')
+    plt.xlabel('Policy')
+    plt.title('Total score of privacy words vs different policies')
+
+
+    plt.show()
+
+#plot_result()
