@@ -15,6 +15,8 @@ def remove_enters(text):
         .replace('\n', '. ') \
         .replace('..', '.') \
 
+
+
 def remove_abbreviations(text):
     text = " ".join(text.split())
     # remove ' such as I've, I'm etc.
@@ -24,6 +26,8 @@ def remove_abbreviations(text):
                 .replace("'t", ' not')   \
                 .replace("'ll", ' will') \
                 .replace("'re", ' are')  \
+
+
 
 def replace_companies(text, company_names):
     text = " ".join(text.split())
@@ -87,7 +91,7 @@ def full_preproccessing(documents, company_names = None, verbose = 0):
         if verbose > 0:  print('----------[Removing Enters]----------')
         document = remove_enters(document)
         if verbose > 0:  print('----------[Removing Company names]----------')
-        if company_names is not None: 
+        if company_names is not None:
             document = replace_companies(document, company_names)
         if verbose > 0:  print('----------[Removing special chars]----------')
         document = remove_special_chars(document)
