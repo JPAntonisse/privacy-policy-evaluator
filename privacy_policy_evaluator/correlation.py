@@ -9,7 +9,7 @@ import re
 import pandas as pd
 
 from sklearn.feature_extraction.text import TfidfVectorizer
-
+import TFIDF
 import string
 import os
 from os import listdir
@@ -67,15 +67,12 @@ def correlation_matrix(relative_folder_path, verbose=0, ngram_min = 1, ngram_max
         print("------------------------------------------------------------")
         print("------------------------------------------------------------")
 
-    ngram_range = (ngram_min, ngram_max)
-    tfidf = TfidfVectorizer(ngram_range= ngram_range)
-    vecs = tfidf.fit_transform(policies)
+    vecs = TFIDF.calculate_vectors(policies, ngram_min=ngram_min, ngram_max = ngram_max)
 
     corr_matrix = ((vecs * vecs.T).A)
     df = pd.DataFrame(corr_matrix, columns = policy_company_names)
     df.insert(0, "document", policy_company_names, True) 
     
-
     if verbose > 0:
         print_correlation_matrix(df)
         feature_names = tfidf.get_feature_names()
@@ -105,4 +102,4 @@ def print_correlation_matrix(dataframe):
 files_path = "data/policies/"
 
 df = correlation_matrix(files_path, verbose=0, ngram_min = 1, ngram_max = 2)
-print_correlation_matrix(df)
+print_correlation_matrix(df) 
