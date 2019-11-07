@@ -17,7 +17,7 @@ def main(args=None):
 
 def evaluate(args):
     """
-    Evaluate a given text, if a topic is set, do a score on topic
+    Evaluate a given file, if a topic is set, do a score on topic
     """
     if args.topic:
         evaluate_on_topic(args)

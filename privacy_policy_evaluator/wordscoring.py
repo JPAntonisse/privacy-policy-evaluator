@@ -53,11 +53,11 @@ def score_text(text, verbose = 0):
         print("(Norm.) Avg. score per privacy word total ", norm_avg_score_total_words)
 
     return {
-        "total_score": total_statement_rating,
-        "avg_score_per_privacy_word": avg_privacy_word_score,
-        "norm_avg_score_per_privacy_word": norm_avg_privacy_word_score,
-        "avg_score_total_words": avg_score_total_words,
-        "norm_avg_score_total_words": norm_avg_score_total_words
+        "total": total_statement_rating,
+        "mean": avg_score_total_words,
+        "mean_norm": norm_avg_score_total_words,
+        "mean_privacy": avg_privacy_word_score,
+        "mean_privacy_norm": norm_avg_privacy_word_score,
     }
 
 
