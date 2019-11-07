@@ -1,95 +1,85 @@
 # Multiplier to determine the statement.
+import json, os
 
-statements = policy_text.split('.')
+# If setting names are changed within 'settings.json' file, they also need to be changed here.
+# min, max for normalization. What is the highest valued words and the lowest valued word
+min_score = "min"
+max_score = "max"
 
-# remove empty statements
-statements = [x for x in statements if len(x) > 0]
 
-# Stip spaces
-statements = [x.strip() for x in statements]
+def score_text(text, verbose = 0):
+    statements = text.split('.')
 
-word_multiplier_dict = {
-    "access": -2,
-    "aggregate": -2,
-    "allow": -2,
-    "apply": -2,
-    "avoid": -2,
-    "block": -2,
-    "change": -2,
-    "choose": -2,
-    "collect": -2,
-    "comply": -2,
-    "connect": -2,
-    "consolidate": -2,
-    "contact": -2,
-    "contract": -2,
-    "customize": -2,
-    "deny": -2,
-    "destroy": -2,
-    "disallow": -2,
-    "discipline": -2,
-    "disclaim": -2,
-    "disclose": -2,
-    "display": -2,
-    "enforce": -2,
-    "ensure": -2,
-    "exchange": -2,
-    "help": -2,
-    "honor": -2,
-    "imply": -2,
-    "inform": -2,
-    "limit": -2,
-    "maintain": -2,
-    "make": -2,
-    "maximize": -2,
-    "minimize": -2,
-    "monitor": -2,
-    "notify": -2,
-    "obligate": -2,
-    "opt-in": -2,
-    "opt-out": -2,
-    "investigate": -2,
-    "post": -2,
-    "prevent": -2,
-    "prohibit": -2,
-    "protect": -2,
-    "provide": -2,
-    "recommend": -2,
-    "request": -2,
-    "require": -2,
-    "reserve": -2,
-    "review": -2,
-    "share": -2,
-    "specify": -2,
-    "store": -2,
-    "update": -2,
-    "urge": -2,
-    "use": -2,
-    "verfy": -2,
-    "prohibition": -2,
-    "permission": 2,
-    "obligation": -2,
-    "anti-obligation": 2
-}
+    # remove empty statements
+    statements = [x for x in statements if len(x) > 0]
+    # Strip spaces
+    statements = [x.strip() for x in statements]
 
-# - * - = - in dit geval
+    dictPrivacyWords = json_read_privacy_word_scores()
+    dictSettings = json_read_settings()
 
-# Print the statements
-total_statement_rating = 0
-norm_total_statement_rating = 0
-for statement in statements:
-    # print(statement)
-    statement_rating = 1
-    norm_statement_rating = 0
-    for word in statement.split():
-        if word in word_multiplier_dict:
-            if statement_rating < 0 and word_multiplier_dict[word] < 0:
-                statement_rating = statement_rating * abs(word_multiplier_dict[word])
-            elif word_multiplier_dict[word] > 0:
-                statement_rating = abs(statement_rating) * word_multiplier_dict[word]
-            else:
-                statement_rating *= word_multiplier_dict[word]
-    # print(statement_rating)
-    total_statement_rating += statement_rating / (len(statement.split()) if len(statement.split()) > 0 else 1)
-asdf = total_statement_rating / len(statements)
-print(asdf)
+    # Print the statements
+    total_statement_rating = 0
+    norm_total_statement_rating = 0
+
+    # Keep track of total number of privacy words that occur in text
+    total_privacy_word_count = 0
+    for statement in statements:
+        statement_rating = 0
+
+        # Keep track of number of privacy words per sentence
+        # Currently this variable has no function at all
+        statement_privacy_word_count = 0
+
+        for word in statement.split():
+            if word in dictPrivacyWords:
+                statement_privacy_word_count += 1
+                total_privacy_word_count += 1
+                statement_rating += dictPrivacyWords[word]
+
+        # print(statement_rating)
+        total_statement_rating += statement_rating
+
+    avg_privacy_word_score = total_statement_rating / total_privacy_word_count
+    norm_avg_privacy_word_score = avg_privacy_word_score / (dictSettings[max_score] - dictSettings[min_score])
+    avg_score_total_words = total_statement_rating / len(text.split())
+    norm_avg_score_total_words = avg_score_total_words / (dictSettings[max_score] - dictSettings[min_score])
+
+    if verbose > 0:
+        print("Total statement rating: ", total_statement_rating)
+        print("Avg. score per privacy word ", avg_privacy_word_score)
+        print("(Norm.) Avg. score per privacy word ", norm_avg_privacy_word_score)
+        print("Avg. score per total word", avg_score_total_words)
+        print("(Norm.) Avg. score per privacy word total ", norm_avg_score_total_words)
+
+    return {
+        "total": total_statement_rating,
+        "mean": avg_score_total_words,
+        "mean_norm": norm_avg_score_total_words,
+        "mean_privacy": avg_privacy_word_score,
+        "mean_privacy_norm": norm_avg_privacy_word_score,
+    }
+
+
+def json_read_settings():
+    dict = {}
+
+    with open(os.path.dirname(__file__) + '/data/settings.json') as json_file:
+        data = json.load(json_file)
+        settings = data['settings']
+        for element in settings:
+            if element != 'data':
+                dict[element] = settings[element]
+
+    return dict
+
+
+def json_read_privacy_word_scores():
+    dict = {}
+
+    with open(os.path.dirname(__file__) + '/data/settings.json') as json_file:
+        data = json.load(json_file)
+        for p in data['settings']['data']:
+            for i in range(0, len(data['settings']['data'][p]['words'])):
+                dict[data['settings']['data'][p]['words'][i]] = data['settings']['data'][p]['value']
+    return dict

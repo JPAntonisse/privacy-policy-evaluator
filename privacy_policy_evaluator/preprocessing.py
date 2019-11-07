@@ -15,6 +15,8 @@ def remove_enters(text):
         .replace('\n', '. ') \
         .replace('..', '.') \
 
+
+
 def remove_abbreviations(text):
     text = " ".join(text.split())
     # remove ' such as I've, I'm etc.
@@ -25,15 +27,13 @@ def remove_abbreviations(text):
                 .replace("'ll", ' will') \
                 .replace("'re", ' are')  \
 
+
+
 def replace_companies(text, company_names):
-    text = " ".join(text.split()).lower()
+    text = " ".join(text.split())
     # Remove company names
-    for name in company_names:
-        text = text.replace(name.lower(), 'company')
-
-    return text
-
-
+    return text.replace('Twitter', 'company').replace('Reddit', 'company').replace('twitter', 'company').replace(
+        'reddit', 'company')
 # remove special characters, basically removing all non letters and non spaces
 def replace_str_index(text, index=0, replacement=' '):
     return '%s%s%s' % (text[:index], replacement, text[index + 1:])
@@ -83,7 +83,7 @@ def remove_stopwords(text):
     return stop_words_removed_policy_text
 
 
-def full_preproccessing(documents, company_names = None, verbose = 0):
+def full_preproccessing(documents, company_names=None, verbose=0):
     preprocessed = []
     count = 0
     for document in documents:
@@ -91,7 +91,7 @@ def full_preproccessing(documents, company_names = None, verbose = 0):
         if verbose > 0:  print('----------[Removing Enters]----------')
         document = remove_enters(document)
         if verbose > 0:  print('----------[Removing Company names]----------')
-        if company_names is not None: 
+        if company_names is not None:
             document = replace_companies(document, company_names)
         if verbose > 0:  print('----------[Removing special chars]----------')
         document = remove_special_chars(document)
