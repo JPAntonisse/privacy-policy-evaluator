@@ -83,7 +83,7 @@ def remove_stopwords(text):
     return stop_words_removed_policy_text
 
 
-def full_preproccessing(documents, company_names = None, verbose = 0):
+def full_preproccessing(documents, company_names=None, verbose=0):
     preprocessed = []
     count = 0
     for document in documents:
@@ -106,6 +106,3 @@ def full_preproccessing(documents, company_names = None, verbose = 0):
         preprocessed.append(document)
 
     return preprocessed
-
-processed = full_preproccessing(["this is a very interesting sentence of the twitter.com company we do use hackers"],[""] , verbose=1)
-print(processed)

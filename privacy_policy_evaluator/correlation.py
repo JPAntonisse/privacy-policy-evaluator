@@ -1,18 +1,6 @@
-import nltk
-from nltk.tokenize import word_tokenize
-from nltk.text import Text
-
-from sklearn.feature_extraction.text import CountVectorizer
-import re
-
-import pandas as pd
-
 from sklearn.feature_extraction.text import TfidfVectorizer
-from privacy_policy_evaluator import TFIDF
-import string
+import pandas as pd
 import os
-from os import listdir
-from os.path import isfile, join
 
 dirname = os.path.dirname(__file__)
 

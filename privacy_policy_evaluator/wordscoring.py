@@ -51,8 +51,8 @@ def score_text(text):
         avg_privacy_word_score = avg_privacy_word_score / 10
         print("(Norm.) Avg. score per privacy word ", avg_privacy_word_score)
 
-    #asdf = total_statement_rating / len(statements)
-    #print(asdf)
+    # asdf = total_statement_rating / len(statements)
+    # print(asdf)
 
 
 def jsonReaderSettings():
@@ -67,6 +67,7 @@ def jsonReaderSettings():
 
     return dict
 
+
 def jsonReaderPrivacyWordScores():
     dict = {}
 
@@ -76,8 +77,3 @@ def jsonReaderPrivacyWordScores():
             for i in range(0, len(data['settings']['data'][p]['words'])):
                 dict[data['settings']['data'][p]['words'][i]] = data['settings']['data'][p]['value']
     return dict
-
-
-with open('data/policies/reddit.txt', 'r', encoding='utf8') as policy:
-    data = policy.read()
-    score_text(data)

@@ -2,6 +2,16 @@ from os import listdir
 from os.path import isfile, join
 
 
+def split(text, delim=','):
+    """
+    Split a string into an array
+    :param text:
+    :param delim:
+    :return:
+    """
+    return [x.strip() for x in text.split(delim)]
+
+
 def read_file(file):
     """
     Reads a file and returns the text
