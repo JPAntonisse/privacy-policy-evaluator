@@ -12,8 +12,8 @@ subparsers = parser.add_subparsers(
 )
 parser_difference = subparsers.add_parser('compare',
                                           help='ppe.py compare {txt1} {txt2}: Show the difference of two texts')
-parser_difference.add_argument('txt1', type=str, help='Base text')
-parser_difference.add_argument('txt2', type=str, help='Compare text')
+parser_difference.add_argument('text1', type=str, help='Base text')
+parser_difference.add_argument('text2', type=str, help='Compare text')
 
 parser_difference = subparsers.add_parser('evaluate',
                                           help='ppe.py evaluate {text} [--topic] Evaluate document')

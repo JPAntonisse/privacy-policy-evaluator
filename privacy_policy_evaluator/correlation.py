@@ -1,4 +1,3 @@
-
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk.text import Text
@@ -9,7 +8,7 @@ import re
 import pandas as pd
 
 from sklearn.feature_extraction.text import TfidfVectorizer
-import TFIDF
+from privacy_policy_evaluator import TFIDF
 import string
 import os
 from os import listdir
@@ -17,89 +16,81 @@ from os.path import isfile, join
 
 dirname = os.path.dirname(__file__)
 
-def correlation_matrix(relative_folder_path, verbose=0, ngram_min = 1, ngram_max = 1):
 
-    files_path = os.path.join(dirname, relative_folder_path)
+def correlation_matrix(policies, company_name=None, verbose=0, ngram_min=1, ngram_max=1):
+    """
+    Makes the correlation matrix from different policies in array policies[]
+    :param company_name:
+    :param policies:
+    :param verbose:
+    :param ngram_min:
+    :param ngram_max:
+    :return:
+    """
 
-    policies_file_names = [f for f in listdir(files_path) if isfile(join(files_path, f) )]
-    policy_company_names = [name.split('.')[0] for name in policies_file_names] 
-
-    # Select a policy text
-    policies = []
-    for file_name in policies_file_names:
-        f = open(files_path + file_name, "r", encoding="utf8")
-        policies.append(f.read())
-
-        ##https://kavita-ganesan.com/extracting-keywords-from-text-tfidf/
-
+    #     ##https://kavita-ganesan.com/extracting-keywords-from-text-tfidf/
     def sort_coo(coo_matrix):
         tuples = zip(coo_matrix.col, coo_matrix.data)
         return sorted(tuples, key=lambda x: (x[1], x[0]), reverse=True)
-    
+
     def extract_topn_from_vector(feature_names, sorted_items, topn=10):
         """get the feature names and tf-idf score of top n items"""
-        
-        #use only topn items from vector
+        # use only topn items from vector
         sorted_items = sorted_items[:topn]
-    
+
         score_vals = []
         feature_vals = []
-        
+
         # word index and corresponding tf-idf score
         for idx, score in sorted_items:
-            
-            #keep track of feature name and its corresponding score
+            # keep track of feature name and its corresponding score
             score_vals.append(round(score, 3))
             feature_vals.append(feature_names[idx])
-    
-        #create a tuples of feature,score
-        #results = zip(feature_vals,score_vals)
-        results= {}
+        # create a tuples of feature,score
+        # results = zip(feature_vals,score_vals)
+        results = {}
         for idx in range(len(feature_vals)):
-            results[feature_vals[idx]]=score_vals[idx]
-        
+            results[feature_vals[idx]] = score_vals[idx]
+
         return results
 
-    if verbose > 0 :
+    if verbose > 0:
         print("------------------------------------------------------------")
         print("------------------------------------------------------------")
         print(f"Correlation matrix with n-gram size({ngram_min}, {ngram_max})")
         print("------------------------------------------------------------")
         print("------------------------------------------------------------")
 
-    vecs = TFIDF.calculate_vectors(policies, ngram_min=ngram_min, ngram_max = ngram_max)
+    ngram_range = (ngram_min, ngram_max)
+    tfidf = TfidfVectorizer(ngram_range=ngram_range)
+    vecs = tfidf.fit_transform(policies)
 
-    corr_matrix = ((vecs * vecs.T).A)
-    df = pd.DataFrame(corr_matrix, columns = policy_company_names)
-    df.insert(0, "document", policy_company_names, True) 
-    
+    corr_matrix = (vecs * vecs.T).A
+    df = pd.DataFrame(corr_matrix, columns=company_name)
+    df.insert(0, "document", company_name, True)
+
     if verbose > 0:
         print_correlation_matrix(df)
         feature_names = tfidf.get_feature_names()
-        n_features = 5 
+        n_features = 5
         print("#######")
         print(" Top features:")
         print()
 
-        #sort the tf-idf vectors by descending order of scores
-        sorted_items=sort_coo(vecs.tocoo())
+        # sort the tf-idf vectors by descending order of scores
+        sorted_items = sort_coo(vecs.tocoo())
 
-        #extract only the top n; n here is 10
-        keywords=extract_topn_from_vector(feature_names,sorted_items,10)
+        # extract only the top n; n here is 10
+        keywords = extract_topn_from_vector(feature_names, sorted_items, 10)
 
         for k in keywords:
-            print(k,keywords[k])
-
+            print(k, keywords[k])
         print()
         print("#######")
         print()
 
     return df
 
+
 def print_correlation_matrix(dataframe):
     print(dataframe.to_string(index=False))
-
-files_path = "data/policies/"
-
-df = correlation_matrix(files_path, verbose=0, ngram_min = 1, ngram_max = 2)
-print_correlation_matrix(df) 
