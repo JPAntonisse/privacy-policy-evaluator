@@ -1,6 +1,5 @@
 import numpy as np
 
-
 def paragraphing(text):
     # Split file on lines
     text_lines = [s.strip() for s in text.splitlines()]
@@ -18,6 +17,6 @@ def paragraphing(text):
     # Return
     return [text_accepted, text_rejected]
 
-
-twitter = open("data/policies/twitter.txt","r").read()
-paragraphing(twitter)
+# Example
+# twitter = open("data/policies/twitter.txt","r").read()
+# paragraphing(twitter)
