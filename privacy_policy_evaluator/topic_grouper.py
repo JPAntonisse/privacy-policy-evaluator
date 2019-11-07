@@ -29,7 +29,6 @@ def group(topics, threshold):
         for feature_index in topic_feature_indices:
             score = vecs[i, feature_index]
             topic_name = feature_names[feature_index]
-            print(f"par: {i}, topic: {topic_name} --> {score} ")
             if score >= threshold:
                 if topic_name in topic_to_paragraph_dict:
                     topic_to_paragraph_dict[topic_name].append(i)
