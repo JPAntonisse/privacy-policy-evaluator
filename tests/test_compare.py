@@ -16,4 +16,4 @@ def evaluate_on_topic():
     os.system("python ../ppe.py evaluate " + text1 + " --topic a,b,c,d")
 
 
-evaluate_on_topic()
+evaluate()

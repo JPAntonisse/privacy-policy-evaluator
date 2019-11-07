@@ -1,0 +1,109 @@
+{
+    "settings": {
+      "min": 0,
+      "max": 10,
+      "data": {
+        "access": {
+          "value": 8,
+          "words": [
+            "access",
+            "connect",
+            "disclose",
+            "display",
+            "exchange",
+            "opt-out",
+            "opt-in",
+            "provide",
+            "request",
+            "share",
+            "urge",
+            "use"
+          ]
+        },
+        "deny": {
+          "value": 3,
+          "words": [
+            "deny",
+            "avoid",
+            "block",
+            "disallow",
+            "disclaim",
+            "limit",
+            "prevent",
+            "protect"
+          ]
+        },
+        "collect": {
+          "value": 7,
+          "words": [
+            "collect",
+            "aggregate",
+            "maintain",
+            "monitor",
+            "reserve",
+            "store",
+            "update"
+          ]
+        },
+        "permissions": {
+          "value": 10,
+          "words": [
+            "allow",
+            "comply",
+            "contract",
+            "destroy",
+            "enforce",
+            "obligate",
+            "obligation",
+            "prohibit",
+            "prohibition",
+            "anti-obligation",
+            "permission",
+            "require"
+          ]
+        },
+        "apply": {
+          "value": 5,
+          "words": [
+            "apply",
+            "consolidate",
+            "imply",
+            "make"
+          ]
+        },
+        "change": {
+          "value": 2,
+          "words": [
+            "change",
+            "customize",
+            "maximize",
+            "minimize"
+          ]
+        },
+        "inform": {
+          "value": 2,
+          "words": [
+            "inform",
+            "help",
+            "notify",
+            "investigate",
+            "recommend",
+            "review",
+            "specify",
+            "verify"
+          ]
+        },
+        "other": {
+          "value": 5,
+          "words": [
+            "choose",
+            "contact",
+            "discipline",
+            "ensure",
+            "honor",
+            "post"
+          ]
+        }
+      }
+    }
+}

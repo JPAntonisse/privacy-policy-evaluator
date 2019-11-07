@@ -26,6 +26,10 @@ def evaluate(args):
 
 
 def evaluate_on_topic(args):
+    """
+
+    :param args:
+    """
     # Get topics from argumnets
     topics = helpers.split(args.topic)
 
@@ -33,9 +37,15 @@ def evaluate_on_topic(args):
 
 
 def evaluate_score(args):
+    """
+
+    :param args:
+    """
     # Read textfile
     text = helpers.read_file(args.file)
-    wordscoring.score_text(text)
+    # Get the Score
+    score = wordscoring.score_text(text)
+    print(score)
 
 
 def compare(args):
