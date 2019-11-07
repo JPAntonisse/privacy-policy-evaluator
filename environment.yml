@@ -7,5 +7,6 @@ dependencies:
   - pip
   - nltk
   - matplotlib
+  - scikit-learn
 #  - pip:                            # Packages installed from PyPI
 #    - requests==2.21.0
