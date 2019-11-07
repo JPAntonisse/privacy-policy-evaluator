@@ -6,17 +6,16 @@ parser = argparse.ArgumentParser(
 parser.add_argument('--version', action='version', version='%(prog)s 1.0.0')
 
 subparsers = parser.add_subparsers(
-    title='Privacy Policy Evaluator',
-    description='Commands',
+    title='Commands',
     dest='function',
-    help='Description',
+    help='Help',
 )
-#
-# create the parser for the "a" command
-parser_difference = subparsers.add_parser('difference', help='Show the difference of two documents')
-parser_difference.add_argument('doc1', type=str, help='Base Document')
-parser_difference.add_argument('doc2', type=str, help='Document to compare with')
+parser_difference = subparsers.add_parser('compare',
+                                          help='ppe.py compare {txt1} {txt2}: Show the difference of two texts')
+parser_difference.add_argument('txt1', type=str, help='Base text')
+parser_difference.add_argument('txt2', type=str, help='Compare text')
 
-# create the parser for the "b" command
-parser_b = subparsers.add_parser('b', help='b help')
-parser_b.add_argument('--baz', choices='XYZ', help='baz help')
+parser_difference = subparsers.add_parser('evaluate',
+                                          help='ppe.py evaluate {text} [--topic] Evaluate document')
+parser_difference.add_argument('text', type=str, help='Text to evaluate')
+parser_difference.add_argument('--topic', type=str, help='json file for topics')

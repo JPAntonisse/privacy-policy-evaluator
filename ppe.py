@@ -8,12 +8,19 @@ def main(args=None):
     # Select the function in this document that is the first argument
     arg_func: Callable = globals()[args.function]
     # Call the funciton
-    arg_func()
+    arg_func(args)
 
 
-def difference():
+def evaluate(args):
+    """
+    Evaluate a given text
+    """
+    print('eval')
+
+
+def compare(args):
     # DO the difference
-    print('aa')
+    print(args)
 
 
 if __name__ == '__main__':
