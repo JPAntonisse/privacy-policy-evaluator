@@ -12,10 +12,18 @@ conda env create -f environment.yml
 
 ## Activate Environment
 To activate the environment
+### Unix:
 ```sh
 $ conda activate ./env
 ```
-
+### Windows:
+```sh
+$ conda activate privacy-policy-evaluator
+```
+To find the Conda Location, to add to your IDE-interpreter.
+```
+echo %CONDA_PREFIX%
+```
 ## Running Privacy Policy Evaluator
 Before running the privacy policy evaluator, make sure to have run setup.py. There are some downloads from NLTK that needs to be completed on your system.
 ```
