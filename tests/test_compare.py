@@ -13,9 +13,9 @@ def evaluate():
 
 
 def evaluate_on_topic():
-    os.system("python ../ppe.py evaluate " + text1 + " --topic a,b,c,d")
+    os.system("python ../ppe.py evaluate " + text1 + " --topic location,data,your")
 
 
-evaluate()
+evaluate_on_topic()
 # evaluate_on_topic()
 # print(os.path.dirname(os.path.abspath(__file__)))
