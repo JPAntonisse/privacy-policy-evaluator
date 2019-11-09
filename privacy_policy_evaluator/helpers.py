@@ -19,7 +19,7 @@ def read_file(file):
     :param file:
     :return:
     """
-    f = open(file, "r")
+    f = open(file, "r", encoding="utf8")
     return f.read()
 
 
