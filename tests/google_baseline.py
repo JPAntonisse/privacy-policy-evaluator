@@ -1,3 +1,6 @@
+import sys
+sys.path.append('../')
+
 from privacy_policy_evaluator import helpers, wordscoring
 import matplotlib.pyplot as plt
 import numpy as np
