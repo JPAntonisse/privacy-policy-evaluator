@@ -17,5 +17,7 @@ def evaluate_on_topic():
 
 
 evaluate_on_topic()
+# evaluate()
+# compare()
 # evaluate_on_topic()
 # print(os.path.dirname(os.path.abspath(__file__)))
