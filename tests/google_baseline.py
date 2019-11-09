@@ -28,9 +28,10 @@ plt.xticks(np.arange(len(score)), (
     r'$\mu$',
     r'$\mu$ normalized',
 ))
+
 plt.yticks(np.arange(0, 1.1, 0.1))
 plt.ylim(0, 1)
 plt.ylabel(r'Score $s$')
-plt.xlabel('Score Type')
+plt.xlabel('Mean score')
 plt.title('Google Privacy Policy Word Scoring')
 plt.show()
