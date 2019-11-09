@@ -1,9 +1,9 @@
 import sys
-sys.path.append('../')
-
-from privacy_policy_evaluator import helpers, wordscoring, preprocessing, correlation
 import os
 
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from privacy_policy_evaluator import helpers, wordscoring, preprocessing, correlation
 
 # Comparison Twitter reddit, correlation matrix
 def compare_twitter_reddit_correlation(ngram_min, ngram_max):
