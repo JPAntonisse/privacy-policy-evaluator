@@ -19,7 +19,7 @@ def read_file(file):
     :param file:
     :return:
     """
-    f = open(file, "r")
+    f = open(file, "r", encoding="utf8")
     return f.read()
 
 
@@ -32,7 +32,7 @@ def read_folder(folder):
     file_names = [f for f in listdir(folder) if isfile(join(folder, f))]
     policies = []
     for file_name in file_names:
-        f = open(folder + file_name, "r")
+        f = open(folder + file_name, "r", encoding="utf8")
         policies.append(f.read())
     return policies
 

@@ -87,6 +87,7 @@ def json_read_privacy_word_scores():
                 dict[data['settings']['data'][p]['words'][i]] = data['settings']['data'][p]['value']
     return dict
 
+
 def plot_result():
     reddit = open(os.path.dirname(os.path.abspath(__file__)) + '/data/policies/reddit.txt',"r", encoding="utf8").read()
     reddit_dict = score_text(reddit)

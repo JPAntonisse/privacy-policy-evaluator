@@ -1,8 +1,11 @@
-from privacy_policy_evaluator import paragraphing, commands, preprocessing, helpers, correlation, wordscoring
+from privacy_policy_evaluator import paragraphing, commands, preprocessing, helpers, correlation, wordscoring, topic_grouper
 from typing import Callable
 
 
 def main(args=None):
+    """
+    Main Starting Code
+    """
     # Parse input
     args = commands.parser.parse_args(args)
     try:
@@ -27,7 +30,9 @@ def evaluate(args):
 
 def evaluate_on_topic(args):
     """
-
+    Evaluate a given document on certain topics.
+    Paragraphs that describe a certain topics are associated with that topic
+    After which all associated topics are scored based on the extracted text
     :param args:
     """
     # Read textfile
@@ -36,13 +41,18 @@ def evaluate_on_topic(args):
     paragraphed = paragraphing.paragraph(text)
     # Get topics from argumnets
     topics = helpers.split(args.topic)
+    # Do the grouping
+    grouped = topic_grouper.group(paragraphed, topics, 0.1)
+    # Score each topic on associated text
+    scored_topics = topic_grouper.evaluate(grouped)
 
-    print(paragraphed)
+    # for key, value in d.items():
+    print(scored_topics)
 
 
 def evaluate_score(args):
     """
-
+    Evaluate a score
     :param args:
     """
     # Read textfile

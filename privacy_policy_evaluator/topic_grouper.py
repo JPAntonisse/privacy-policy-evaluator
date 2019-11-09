@@ -1,11 +1,12 @@
+from typing import Dict, Any, Union
+
 import numpy as np
-from privacy_policy_evaluator import helpers, preprocessing
+from privacy_policy_evaluator import helpers, preprocessing, wordscoring
 
 
 def group(paragraphs, topics, threshold=0.1):
     # Preprocces the topics
-    topics = [preprocessing.lemmatization(topic) for topic in topics]
-    print(topics)
+    topics = [preprocessing.lemmatization(topic).strip() for topic in topics]
 
     # compute TFIDF for all paragraphs and topics
     [vecs, tfidf] = helpers.calculate_vectors(paragraphs + topics)
@@ -36,3 +37,10 @@ def group(paragraphs, topics, threshold=0.1):
         topic_to_text_dict[topic_name] = " ".join(list(paragraphs[paragraph_indexes]))
 
     return topic_to_text_dict
+
+
+def evaluate(topic_paragraphs: dict):
+    score: Dict = {}
+    for key, value in topic_paragraphs.items():
+        score[key] = wordscoring.score_text(value)
+    return score

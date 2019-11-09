@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def paragraphing(text):
+def paragraph(text):
     # Split file on lines
     text_lines = [s.strip() for s in text.splitlines()]
     # Sort the line length
