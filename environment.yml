@@ -8,5 +8,6 @@ dependencies:
   - nltk
   - matplotlib
   - scikit-learn
+  - mpltools
 #  - pip:                            # Packages installed from PyPI
 #    - requests==2.21.0

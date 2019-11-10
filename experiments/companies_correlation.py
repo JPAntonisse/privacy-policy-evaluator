@@ -12,32 +12,16 @@ files = [
     "../privacy_policy_evaluator/data/policies/icloud.txt",
 ]
 
-topics = ['location', 'address', 'email', 'information']
+companies = ['Google', 'Reddit', 'Twitter', 'ING', 'iCloud']
 
 texts = []  # Read File
 for file in files:
     texts.append(helpers.read_file(file))
 
-grouped = []
-for text in texts:
-    # Paragraph the given text
-    paragraphed = paragraphing.paragraph(text)
-    # Do the grouping
-    grouped.append(topic_grouper.group(paragraphed, topics, 0.1))
-
-a = [
-    grouped[0].get('location'),
-    grouped[0].get('address'),
-    grouped[0].get('email'),
-    grouped[0].get('information'),
-    grouped[1].get('location'),
-    grouped[1].get('address'),
-    grouped[1].get('email'),
-    grouped[1].get('information'),
-]
-
-corr_og = correlation.correlation_matrix(a)
-df = corr_og.loc[0:3, np.arange(4, 8)]
+df = correlation.correlation_matrix(texts)
+df = df.loc[0:4, np.arange(0, 5)]
+print(df)
+correlation.print_correlation_matrix(df)
 
 fig = plt.figure(figsize=(7, 5), dpi=200)
 ax = fig.add_subplot(111)
@@ -47,12 +31,11 @@ col = [(1, 1, 1), (242 / 255, 40 / 255, 38 / 255)]
 cmap = colors.LinearSegmentedColormap.from_list(name='custom', colors=col)
 cax = ax.matshow(df, interpolation='nearest', vmin=0, vmax=1, cmap=cmap)
 
-
 cbar = fig.colorbar(cax)
 cbar.ax.set_ylabel('Score', rotation=270)
-ax.set_xticklabels([''] + topics)
-ax.set_yticklabels([''] + topics)
+ax.set_xticklabels([''] + companies)
+ax.set_yticklabels([''] + companies)
 ax.xaxis.tick_top()
-ax.set_title('Google')
-plt.ylabel('Reddit')
+ax.set_title('Company')
+plt.ylabel('Company')
 plt.show()
