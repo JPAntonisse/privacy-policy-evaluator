@@ -2,6 +2,11 @@ from os import listdir
 from os.path import isfile, join
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+
+import collections
+
 
 def split(text, delim=','):
     """
@@ -42,3 +47,20 @@ def calculate_vectors(text, ngram_min=1, ngram_max=1):
     tfidf = TfidfVectorizer(ngram_range=ngram_range)
     vecs = tfidf.fit_transform(text)
     return [vecs, tfidf]
+
+
+def remove_stop_words(text):
+    stop_words = set(stopwords.words('english'))
+
+    word_tokens = word_tokenize(text)
+
+    return [w for w in word_tokens if not w in stop_words]
+
+
+def most_common_words(array, common=10):
+    # Pass the split_it list to instance of Counter class.
+    Counter = collections.Counter(array)
+
+    # most_common() produces k frequently encountered
+    # input values and their respective counts.
+    return Counter.most_common(common)

@@ -32,8 +32,17 @@ def remove_abbreviations(text):
 def replace_companies(text, company_names):
     text = " ".join(text.split())
     # Remove company names
-    return text.replace('Twitter', 'company').replace('Reddit', 'company').replace('twitter', 'company').replace(
-        'reddit', 'company')
+    return text\
+        .replace('Twitter', 'company')\
+        .replace('Reddit', 'company')\
+        .replace('twitter', 'company')\
+        .replace('Apple', 'company')\
+        .replace('Google', 'company')\
+        .replace('ING', 'company')\
+        .replace('Heineken', 'company')\
+        .replace('reddit', 'company')
+
+
 # remove special characters, basically removing all non letters and non spaces
 def replace_str_index(text, index=0, replacement=' '):
     return '%s%s%s' % (text[:index], replacement, text[index + 1:])
